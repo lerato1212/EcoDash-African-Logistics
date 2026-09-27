@@ -3,17 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoDash – African Logistics Simulation</title>
+
+    <title>EcoDash | African Logistics Simulation</title>
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <main>
-        <h1>EcoDash</h1>
-        <p>African Logistics Simulation</p>
+    <main class="game-container">
+
+        <!-- Game Header -->
+        <header class="game-header">
+            <div>
+                <h1>EcoDash</h1>
+                <p>African Logistics Simulation</p>
+            </div>
+
+            <div class="mission-status">
+                <span>MISSION</span>
+                <strong id="missionName">Deliver Essential Supplies</strong>
+            </div>
+        </header>
+
+
+        
+        <section class="game-hud">
+
+            <div class="hud-item">
+                <span class="hud-label">BATTERY</span>
+                <div class="battery-container">
+                    <div id="batteryBar" class="battery-bar"></div>
+                </div>
+                <span id="batteryText">100%</span>
+            </div>
+
+            <div class="hud-item">
+                <span class="hud-label">SCORE</span>
+                <strong id="score">0</strong>
+            </div>
+
+            <div class="hud-item">
+                <span class="hud-label">DISTANCE</span>
+                <strong id="distance">0 m</strong>
+            </div>
+
+            <div class="hud-item">
+    <span class="hud-label">EFFICIENCY</span>
+    <strong id="efficiency">0</strong>
+</div>
+
+            <div class="hud-item">
+                <span class="hud-label">TIME</span>
+                <strong id="timer">05:00</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Main Game Area -->
+        <section class="game-area">
+
+            <canvas id="gameCanvas" width="1000" height="600">
+                Your browser does not support HTML5 Canvas.
+            </canvas>
+
+        </section>
+
+
+        <!-- Game Controls -->
+        <section class="game-controls">
+
+            <button id="startButton" class="game-button">
+                START MISSION
+            </button>
+
+            <button id="pauseButton" class="game-button" disabled>
+                PAUSE
+            </button>
+
+            <button id="restartButton" class="game-button">
+                RESTART
+            </button>
+
+        </section>
+
+
+        <!-- Game Status -->
+        <section class="game-message">
+            <p id="gameStatus">
+                Ready for your delivery mission.
+            </p>
+        </section>
+
     </main>
 
+    <audio id="deliverySound" src="assets/audio/delivery-success.mp3"></audio>
+
+    <script src="js/player.js"></script>
+    <script src="js/obstacles.js"></script>
     <script src="js/main.js"></script>
+    
+
 </body>
 </html>
+
+
